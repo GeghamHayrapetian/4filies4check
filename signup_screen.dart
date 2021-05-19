@@ -62,7 +62,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
           elevation: 0,
         ),
         body: Container(
-            color: Colors.red,
             child: Form(
                 key: _formKey,
                 child: Stack(children: [
@@ -76,29 +75,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         alignment: Alignment.bottomCenter,
                         child: _signUpButton(state)),
                   )
-                  // Container(
-                  //     color: Colors.pink,
-                  //     child: SingleChildScrollView(
-                  //         child: Column(
-                  //       children: [
-                  //         _fieldOnScreen(state),
-                  //         Positioned(
-                  //           bottom: MediaQuery.of(context).viewInsets.bottom,
-                  //           child: _signUpButton(state),
-                  //         )
-                  //       ],
+               
                 ]))));
   }
 
-  // Widget _renderButtonBack() {
-  //   return IconButton(
-  //       icon: Icon(
-  //         Icons.arrow_back_ios,
-  //         color: Colors.blue,
-  //         size: 32,
-  //       ),
-  //       onPressed: () => Navigator.pop(context));
-  // }
+ 
 
   Widget _fieldOnScreen(SignupState state) {
     return Container(
