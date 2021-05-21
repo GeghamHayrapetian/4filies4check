@@ -16,6 +16,7 @@ import 'package:snap_chat/widgets/txt_field.dart';
 import '../../app_localizations.dart';
 
 // ignore: must_be_immutable
+  ---> Check and fix all warnings
 class SignUpScreen extends StatefulWidget {
   final User _user = User();
   @override
@@ -27,6 +28,8 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   SignupBloc _signupBloc;
   final _formKey = GlobalKey<FormState>();
+
+    ---> Is need this propertys here ?
 
   String _lastName = "";
   String _firstName = "";
@@ -80,7 +83,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
 
  
-
+---> Render functions should be like this  Widget _renderFieldOnScreen(SignupState state)
   Widget _fieldOnScreen(SignupState state) {
     return Container(
         height: MediaQuery.of(context).size.height,
@@ -108,6 +111,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
+    ---> Render functions name should be logical
   Widget _textForFirstName(SignupState state) {
     return Padding(
         padding: const EdgeInsets.only(
