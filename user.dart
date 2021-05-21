@@ -29,6 +29,7 @@ class User extends Equatable {
 
   String password;
 
+  ---> Seperate emailOrPhoneNumber property to email and phone
   String emailOrPhoneNumber;
 
   Map<String, String> toJson() {
@@ -58,6 +59,7 @@ class User extends Equatable {
       [firstName, lastName, birthday, userName, password, emailOrPhoneNumber];
 }
 
+---> Sepereate this class in other file
 class UserModel {
   UserModel() {
     _collection = client.getDatabase("snapDB").getCollection("User");
@@ -66,6 +68,7 @@ class UserModel {
   final client = MongoRealmClient();
   MongoCollection _collection;
 
+  ---> Use extension for this functions or move to in repository
   Future<dynamic> addUser(User user) async {
     if (!await checkUsername(user.userName)) {
       final docsId = await _collection.insertOne(user.asDocument());
