@@ -5,6 +5,8 @@ class UserRepository {
   UserRepository() {
     //  DBProvider.db.createUserTable();
   }
+  
+  ---> Dont use validation in UserModel, move it here or create ValidationRepository
   final UserModel _userModel = UserModel();
   Future<List<User>> getAllUsers() async {
     return _userModel.getAllUsers();
