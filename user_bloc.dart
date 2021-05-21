@@ -13,8 +13,10 @@ class UserBloc extends Bloc<UserEvent, UserState> {
   final UserRepository usRep;
   final DateFormat _dateFormat = DateFormat("dd-MM-yyyy");
 
+    ---> Is need this propertys here ?
   Map<ProfileError, String> _map = {};
   Map<ProfileError, String> get map => _map;
+  
   @override
   Stream<UserState> mapEventToState(UserEvent event) async* {
     if (event is GetAllUsers) {
@@ -37,8 +39,12 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     }
   }
 
+  ---> Is need this property here ?
   int i = 0;
+  
+    ---> Function is too long, seperate to other functions
   Stream<UserState> mapChangeEventToState(EditProfile event) async* {
+        ---> User fields validation should be in ValidationRepository
     if (event.editsType == Edits.firstname) {
       if (event.defaultValue == event.edit || event.edit.length > 3) {
         _map[ProfileError.firstname] = null;
