@@ -12,6 +12,8 @@ import 'country_state.dart';
 
 class CountryScreen extends StatefulWidget {
   CountryScreen({this.notifier});
+  
+  ---> Use logical names of propertys, maybe _changeCountryNotifier ?
   ValueNotifier<Country> notifier;
 
   @override
@@ -117,10 +119,14 @@ class _CountryScreenState extends State<CountryScreen> {
     return const Center(child: CircularProgressIndicator());
   }
 
+  ---> Move this function in Country extension
   String _stringToEmoji(String string) {
     return string.replaceAllMapped(RegExp(r'[A-Z]'),
         (match) => String.fromCharCode(match.group(0).codeUnitAt(0) + 127397));
   }
+
+    ---> Render functions should at first
+    ---> Separate render functions if need
 
   Widget _builCountryList(List<Country> countries) {
     return Container(
